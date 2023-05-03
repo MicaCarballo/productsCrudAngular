@@ -1,0 +1,44 @@
+<div container><h1 mat-dialog-title>{{titleAction}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="formProduct"  >
+        <mat-grid-list cols="1" rowHeight="80px">
+            <mat-grid-tile >
+              <mat-form-field class="example-full-width">
+                    <mat-label>name</mat-label>
+                    <input matInput placeholder="name" formControlName ="name" autocomplete="off">
+              </mat-form-field>
+                   
+                 
+            </mat-grid-tile>
+            <mat-grid-tile>
+                
+                
+                    
+                  
+              <mat-form-field class="example-full-width">
+                      <mat-label>Price</mat-label>
+                      <input matInput type="number" class="example-right-align" placeholder="0" formControlName ="price">
+                      <span matTextPrefix>$&nbsp;</span>
+                      
+                    </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field class="example-full-width">
+                <mat-label>description</mat-label>
+                <input matInput placeholder="description" formControlName ="description" autocomplete="off">
+              </mat-form-field>
+               
+            </mat-grid-tile>
+          </mat-grid-list>
+    </form>
+    </div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="warn">Close</button>
+  <button mat-raised-button  color="warn"
+  (click)="addEditProduct()"
+  [disabled]="formProduct.invalid"
+
+  >{{buttonAction}}</button>
+</div>
+</div>
+
